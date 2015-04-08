@@ -1,0 +1,29 @@
+{
+  "name": "simditor-fontscale",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mycolorway/simditor-fontscale",
+  "authors": [
+    "tinyfive <tinyfive@mycolorway.com>"
+  ],
+  "description": "a simditor plugin fontscale",
+  "main": "lib/simditor-fontscale.js",
+  "keywords": [
+    "simditor",
+    "fontscale"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "Gruntfile.coffee",
+    "package.json"
+  ],
+  "devDependencies": {
+    "jasmine-jquery": "2.x"
+  },
+  "dependencies": {
+      "jquery": "~2.1.0",
+      "simditor": "~2.1.5"
+  }
+}
