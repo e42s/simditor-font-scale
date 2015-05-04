@@ -2,7 +2,7 @@
 class SmallButton extends Simditor.Button
   name: 'small'
 
-  icon: 'font'
+  icon: 'font-minus'
 
   disableTag: 'pre'
 
