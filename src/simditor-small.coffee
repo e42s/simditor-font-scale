@@ -17,15 +17,21 @@ class SmallButton extends Simditor.Button
     return true if @disabled
 
     range = @editor.selection.getRange()
-    @setActive $(range.startContainer).parents(@htmlTag).length > 0
+    @setActive $(range.startContainer).parents('small').length > 0
     @active
 
   command: ->
     range = @editor.selection.getRange()
+    return if range.collapsed
+
+    firstSmall = $(range.cloneContents()).contents().first()
+    firstSmall = firstSmall.find('small:first') unless firstSmall.is 'small'
+    recoverNormal = @active or (firstSmall.length > 0 and not firstSmall[0].previousSibling)
+
     @editor.selection.save()
     accept = false
 
-    if @active
+    if recoverNormal
       treeWalker = document.createTreeWalker(
         range.commonAncestorContainer,
         NodeFilter.SHOW_ALL,
@@ -104,5 +110,7 @@ class SmallButton extends Simditor.Button
 
     @editor.selection.restore()
     @editor.trigger 'valuechanged'
+    $(document).trigger 'selectionchange'
+
 
 Simditor.Toolbar.addButton SmallButton
