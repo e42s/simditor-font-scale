@@ -24,6 +24,6 @@
   },
   "dependencies": {
       "jquery": "~2.1.0",
-      "simditor": "tf-selection"
+      "simditor": "tf-fix-selection"
   }
 }

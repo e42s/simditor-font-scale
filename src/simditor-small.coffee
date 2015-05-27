@@ -17,7 +17,7 @@ class SmallButton extends Simditor.Button
     return true if @disabled
 
     range = @editor.selection.getRange()
-    @setActive $(range.startContainer).parents('small').length > 0
+    @setActive $(range.startContainer).parents('small').length > 0 or $($(range.startContainer).contents()[range.startOffset]).is('small')
     @active
 
   command: ->
