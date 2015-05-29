@@ -34,7 +34,7 @@ class SmallButton extends Simditor.Button
     if recoverNormal
       treeWalker = document.createTreeWalker(
         range.commonAncestorContainer,
-        NodeFilter.SHOW_ALL,
+        -1, # using -1 insted of NodeFilter.SHOW_All for safari
         {
           acceptNode: (node) ->
             $node = $(node)
@@ -80,7 +80,7 @@ class SmallButton extends Simditor.Button
     else
       treeWalker = document.createTreeWalker(
         range.commonAncestorContainer,
-        NodeFilter.SHOW_All,
+        -1, # using -1 insted of NodeFilter.SHOW_All for safari
         {
           acceptNode: (node) ->
             $node = $(node)
