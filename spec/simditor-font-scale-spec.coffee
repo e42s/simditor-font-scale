@@ -1,4 +1,4 @@
-describe 'Simditor Small', ->
+describe 'Simditor Font Scale', ->
   editor = null
   $textarea = null
   btn = null
@@ -15,9 +15,9 @@ describe 'Simditor Small', ->
       $textarea = $('<textarea id="editor"></textarea>').appendTo 'body'
       editor = new Simditor
         textarea: $textarea
-        toolbar: ['small', 'bold']
+        toolbar: ['fontScale', 'bold']
 
-      btn = $('.simditor-toolbar .toolbar-item-small')
+      btn = $('.simditor-toolbar .toolbar-item-fontScale')
 
     it 'should render small button', ->
       expect(btn).toExist()

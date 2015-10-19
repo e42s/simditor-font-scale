@@ -1,0 +1,19 @@
+.simditor .simditor-toolbar .toolbar-item-fontScale.active {
+  font-size: 10px;
+  font-family: arial;
+}
+.simditor .simditor-toolbar .toolbar-item-fontScale.active-150 .simditor-icon::before {
+  content: '150%';
+}
+.simditor .simditor-toolbar .toolbar-item-fontScale.active-125 .simditor-icon::before {
+  content: '125%';
+}
+.simditor .simditor-toolbar .toolbar-item-fontScale.active-75 .simditor-icon::before {
+  content: '75%';
+}
+.simditor .simditor-toolbar .toolbar-item-fontScale.active-25 .simditor-icon::before {
+  content: '25%';
+}
+.simditor .simditor-toolbar .toolbar-menu-fontScale {
+  font-family: arial;
+}

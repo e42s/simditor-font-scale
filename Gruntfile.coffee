@@ -4,12 +4,20 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON 'package.json'
 
+    sass:
+      styles:
+        options:
+          style: 'expanded'
+          bundleExec: true
+          sourcemap: 'none'
+        files:
+          'styles/simditor-font-scale.css': 'styles/simditor-font-scale.scss'
     coffee:
       src:
         options:
           bare: true
         files:
-          'lib/simditor-small.js': 'src/simditor-small.coffee'
+          'lib/simditor-font-scale.js': 'src/simditor-font-scale.coffee'
       spec:
         expand: true
         flatten: true
@@ -19,11 +27,11 @@ module.exports = (grunt) ->
 
     umd:
       all:
-        src: 'lib/simditor-small.js'
+        src: 'lib/simditor-font-scale.js'
         template: 'umd'
-        amdModuleId: 'simditor-small'
-        objectToExport: 'SmallButton'
-        globalAlias: 'SimditorSmall'
+        amdModuleId: 'simditor-font-scale'
+        objectToExport: 'FontScaleButton'
+        globalAlias: 'SimditorFontScale'
         deps:
           'default': ['$', 'Simditor']
           amd: ['jquery', 'simditor']
@@ -32,6 +40,9 @@ module.exports = (grunt) ->
             items: ['jQuery', 'Simditor']
             prefix: ''
     watch:
+      styles:
+        files: ['styles/*.scss']
+        tasks: ['sass', 'jasmine']
       src:
         files: ['src/*.coffee']
         tasks: ['coffee:src', 'umd', 'jasmine']
@@ -46,6 +57,7 @@ module.exports = (grunt) ->
           outfile: 'spec/index.html'
           styles: [
             'styles/simditor.css'
+            'styles/simditor-font-scale.css'
           ]
           specs: 'spec/*.js'
           vendor: [
@@ -60,7 +72,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jasmine'
+  grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-umd'
 
-  grunt.registerTask 'default', ['coffee', 'umd', 'jasmine:test:build', 'watch']
-  grunt.registerTask 'test', ['coffee', 'umd', 'jasmine']
+  grunt.registerTask 'default', ['sass', 'coffee', 'umd', 'jasmine:test:build', 'watch']
+  grunt.registerTask 'test', ['sass', 'coffee', 'umd', 'jasmine']

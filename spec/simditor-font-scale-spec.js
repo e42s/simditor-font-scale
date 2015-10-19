@@ -1,5 +1,5 @@
 (function() {
-  describe('Simditor Small', function() {
+  describe('Simditor Font Scale', function() {
     var $textarea, btn, editor;
     editor = null;
     $textarea = null;
@@ -18,9 +18,9 @@
         $textarea = $('<textarea id="editor"></textarea>').appendTo('body');
         editor = new Simditor({
           textarea: $textarea,
-          toolbar: ['small', 'bold']
+          toolbar: ['fontScale', 'bold']
         });
-        return btn = $('.simditor-toolbar .toolbar-item-small');
+        return btn = $('.simditor-toolbar .toolbar-item-fontScale');
       });
       return it('should render small button', function() {
         return expect(btn).toExist();

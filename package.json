@@ -1,18 +1,18 @@
 {
-  "name": "simditor-small",
+  "name": "simditor-font-scale",
   "version": "0.1.0",
-  "description": "simditor small button plugin",
-  "main": "src/simditor-small.coffee",
+  "description": "simditor font scale button plugin",
+  "main": "src/simditor-font-scale.coffee",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mycolorway/simditor-small.git"
+    "url": "git://github.com/mycolorway/simditor-font-scale.git"
   },
   "author": "tinyfive",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mycolorway/simditor-small/issues"
+    "url": "https://github.com/mycolorway/simditor-font-scale/issues"
   },
-  "homepage": "https://github.com/mycolorway/simditor-small",
+  "homepage": "https://github.com/mycolorway/simditor-font-scale",
   "scripts": {
     "test": "grunt test --verbose"
   },
@@ -20,6 +20,7 @@
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-sass": "0.x",
     "grunt-contrib-jasmine": "0.x",
     "grunt-umd": "2.x"
   }

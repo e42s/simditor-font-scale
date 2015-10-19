@@ -1,15 +1,15 @@
 {
-  "name": "simditor-small",
+  "name": "simditor-font-scale",
   "version": "0.1.0",
-  "homepage": "https://github.com/mycolorway/simditor-small",
+  "homepage": "https://github.com/mycolorway/simditor-font-scale",
   "authors": [
     "tinyfive <tinyfive@mycolorway.com>"
   ],
-  "description": "a simditor plugin to make font small",
-  "main": "lib/simditor-small.js",
+  "description": "a simditor plugin to make font scale",
+  "main": "lib/simditor-scale.js",
   "keywords": [
     "simditor",
-    "small"
+    "font scale"
   ],
   "license": "MIT",
   "ignore": [
@@ -24,6 +24,6 @@
   },
   "dependencies": {
       "jquery": "~2.1.0",
-      "simditor": "tf-fix-selection"
+      "simditor": "~2.x.x"
   }
 }
